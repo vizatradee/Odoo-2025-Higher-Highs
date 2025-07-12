@@ -1,0 +1,88 @@
+Project Prompt: Skill Swap Web Platform with Email-Based OTP Authentication
+Project Overview
+Develop a web-based Skill Swap platform that enables users to exchange skills by listing what they offer, requesting skills they need, and facilitating secure skill swaps. The platform features a user-friendly frontend built with React (using Vite) and a robust backend with Node.js, Express, MongoDB, Nodemailer, and JWT for authentication. Implement an email-based OTP (One-Time Password) verification system for sign-up, login, and password reset, ensuring a secure and seamless user experience. Integrate a custom app icon (icon.png) for branding and align the design with the Odoo Hackathon '25 problem statement.
+
+Objective
+Create a fully functional web platform with the following core features:
+
+Authentication: Support email/password login, passwordless OTP login, and OTP-based password reset.
+Skill Swap Functionality: Allow users to list skills they offer, request skills they want, and manage swap requests (to be implemented in later phases).
+User Experience: Provide a responsive, intuitive interface with toast notifications for success/error messages and secure JWT-based session management.
+Branding: Incorporate a custom app icon (icon.png) as the favicon and on authentication pages.
+Tech Stack
+Frontend:
+Framework: React (with Vite)
+Styling: Tailwind CSS
+Dependencies: axios (API requests), react-toastify (notifications), js-cookie (JWT storage), react-router-dom (routing)
+File Structure: Located in D:\SKILLSWAP\frontend/
+Backend:
+Framework: Node.js with Express
+Database: MongoDB
+Authentication: JWT, bcrypt
+Email Service: Nodemailer
+CORS: Enabled for cross-origin requests
+Endpoints: /api/auth/signup, /api/auth/verify-otp, /api/auth/login, /api/auth/login-otp, /api/auth/forgot-password, /api/auth/reset-password
+File Structure: Located in D:\SKILLSWAP\backend/
+Environment Variables (Backend):
+GMAIL_PASS: Gmail App Password for Nodemailer
+MONGODB_URL: MongoDB connection string
+JWT_SECRET_TOKEN: JWT secret key
+PORT: 5000 (default)
+App Icon: icon.png in frontend/public/
+Current Status
+Frontend: Successfully set up with Vite at http://localhost:5173, but currently displays the default Vite + React template. Custom files (e.g., App.jsx, Signup.jsx) need to be integrated.
+Backend: Configured with Express, MongoDB, Nodemailer, and JWT, running at http://localhost:5000. Endpoints are defined but require testing with a valid .env file.
+Integration: API calls from frontend to backend are pending full testing (e.g., OTP email delivery requires Gmail setup).
+Tasks to Complete
+Frontend Development:
+Replace default Vite files (App.jsx, main.jsx) with custom Skill Swap components (e.g., Signup.jsx, Login.jsx).
+Ensure icon.png is correctly imported and displayed as the favicon and on all authentication pages.
+Test routing with react-router-dom (e.g., /signup, /login, /verify-otp).
+Verify Tailwind CSS styling and react-toastify notifications.
+Backend Configuration:
+Set up .env with valid GMAIL_PASS, MONGODB_URL, JWT_SECRET_TOKEN, and PORT.
+Test backend endpoints with curl or Postman (e.g., sign-up request to /api/auth/signup).
+Ensure OTPs expire after 5 minutes (handled by MongoDB TTL index).
+Authentication Flows:
+Sign-Up: Users enter name, email, and password; receive an OTP via email; verify OTP to activate the account.
+Login: Support email/password and OTP-based login.
+Forgot Password: Send OTP to reset password securely.
+Store JWT tokens in browser cookies using js-cookie.
+Testing:
+Run frontend with npm run dev and backend with node index.js.
+Test end-to-end flows (sign-up, login, forgot password, reset password).
+Verify error handling with react-toastify.
+Next Phase Features (Post-Authentication):
+User Features: Profile management (name, location, photo), skill listing, browsing, swap requests, feedback.
+Admin Features: User moderation, ban users, activity reports.
+UI Mockup: Follow Excalidraw design inspiration.
+Deliverables
+React Frontend:
+Pages: /signup, /login, /verify-otp, /forgot-password, /reset-password, / (home placeholder).
+API Integration: Use axios to communicate with backend endpoints.
+State Management: Use js-cookie for JWT; consider React Context or Redux for future scalability.
+UI: Responsive design with Tailwind CSS and icon.png branding.
+Backend:
+Node.js server with Express, MongoDB schemas for users and OTPs, Nodemailer for email, JWT for authentication.
+Documentation:
+Setup instructions, API endpoint details, and testing steps.
+Constraints
+OTPs expire after 5 minutes (backend-handled).
+Backend runs on port 5000; frontend on port 5173 (local testing).
+Gmail requires an App Password for Nodemailer (2FA enabled).
+Replace http://localhost:5000 with the deployed backend URL for production.
+Success Criteria
+Users can sign up with OTP verification, log in with email/password or OTP, and reset passwords via OTP.
+The app icon is visible as the favicon and on all pages.
+API requests are secure, and errors are handled with user-friendly toast messages.
+The platform aligns with the Odoo Hackathon '25 requirements.
+Additional Notes
+Current date and time: 02:20 PM IST, Saturday, July 12, 2025.
+Deploy the backend (e.g., Render) and frontend (e.g., Vercel) after core authentication is complete.
+Seek assistance for Gmail setup, MongoDB configuration, or UI enhancements as needed.
+Action Items
+ Integrate custom frontend files into D:\SKILLSWAP\frontend/src/.
+ Configure .env in D:\SKILLSWAP\backend/ and test backend endpoints.
+ Test end-to-end authentication flows.
+ Add a placeholder icon.png if not available.
+ Plan the next phase (skill swap features) based on feedback.
