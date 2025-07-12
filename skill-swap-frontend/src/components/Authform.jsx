@@ -1,4 +1,5 @@
 // components/AuthForm.jsx
+import Link from 'next/link';
 import { useState } from 'react';
 
 const AuthForm = ({ type, onSubmit, isLoading, error }) => {
