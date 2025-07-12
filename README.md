@@ -23,7 +23,8 @@ Users can browse or search others by skill (e.g., “Photoshop” or “Excel”
 Ratings or feedback after a swap 
 
 ## The user is also able to delete the swap request if it is not accepted. 
-Admin Role 
+ 
+ Admin Role 
 ● Reject inappropriate or spammy skill descriptions. 
 ● Ban users who violate platform policies. 
 ● Monitor pending, accepted, or cancelled swaps. 
