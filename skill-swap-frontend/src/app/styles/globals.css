@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply Inter font globally */
+html, body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-gray-900 text-gray-100; /* Dark background from mockups */
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Basic styling for form elements to match dark theme */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  @apply bg-gray-800 border border-gray-700 rounded-md px-3 py-2 text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+}
+
+/* Style for skill/tag inputs */
+.skill-tag-input {
+  @apply flex flex-wrap gap-2 p-2 border border-gray-700 rounded-md bg-gray-800;
+}
+
+.skill-tag {
+  @apply bg-primary text-white text-sm px-2 py-1 rounded-full flex items-center gap-1;
+}
+
+.skill-tag-remove {
+  @apply text-white hover:text-gray-200 cursor-pointer;
+}
