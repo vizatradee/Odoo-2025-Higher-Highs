@@ -36,6 +36,5 @@ Mockup - https://link.excalidraw.com/l/65VNwvy7c4X/8bM86GXnnUN
 ## File Structure 
 
 ``
-
 <code >
 ``
