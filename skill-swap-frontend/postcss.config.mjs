@@ -1,5 +1,9 @@
-const config = {
-  plugins: ["@tailwindcss/postcss"],
-};
+// skill-swap-frontend/postcss.config.mjs
 
-export default config;
+/** @type {import('postcss-load-config').Config} */
+export default { // <-- Change from module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
