@@ -1,6 +1,6 @@
 // pages/_app.jsx
 import '../styles/globals.css';
-import Header from '@/components/Header';
+import Header from '../components/Header';
 import Head from 'next/head';
 import { Inter } from 'next/font/google'; // Import the font
 
