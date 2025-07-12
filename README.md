@@ -34,8 +34,78 @@ Ratings or feedback after a swap
 Mockup - https://link.excalidraw.com/l/65VNwvy7c4X/8bM86GXnnUN
 
 
-## File Structure 
 
-``
-<code >
-``
+* Run **backend server** (Node.js + Express)
+* Serve **frontend (HTML/CSS)** using a static server like `live-server` or `http-server`
+* Do this from a **single terminal command**
+
+---
+
+## 🛠 Step-by-Step Setup
+
+### 1. 📦 Install `concurrently` (in root folder)
+
+```bash
+npm install concurrently --save-dev
+```
+
+> If you don’t have a `package.json` at the root, run:
+
+```bash
+npm init -y
+```
+
+---
+
+### 2. 📦 Install `http-server` (to serve frontend)
+
+```bash
+npm install http-server --save-dev
+```
+
+---
+
+### 3. 🛠 Update `package.json` Scripts
+
+At the root level (in `package.json`), add this under `"scripts"`:
+
+```json
+"scripts": {
+  "start": "concurrently \"npm run server\" \"npm run client\"",
+  "server": "cd backend && node server.js",
+  "client": "cd frontend && http-server -p 3000"
+}
+```
+
+This will:
+
+* Start backend from `backend/server.js` on default port (5000)
+* Serve static frontend from `frontend/` on port **3000**
+
+---
+
+### 4. ▶️ Run both with one command
+
+```bash
+npm run start
+```
+
+You’ll see output from **both backend and frontend** in one terminal.
+
+---
+
+
+
+## 🧠 Bonus Tips
+
+* You can use `live-server` instead of `http-server` if you want auto-reload:
+
+```bash
+npm install live-server --save-dev
+```
+
+Change `"client"` script:
+
+```json
+"client": "cd frontend && live-server"
+```
