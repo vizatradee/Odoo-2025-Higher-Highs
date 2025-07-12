@@ -31,3 +31,11 @@ Ratings or feedback after a swap
 ● Send platform-wide messages (e.g., feature updates, downtime alerts). 
 ● Download reports of user activity, feedback logs, and swap stats. 
 Mockup - https://link.excalidraw.com/l/65VNwvy7c4X/8bM86GXnnUN
+
+
+## File Structure 
+
+``
+
+<code >
+``
